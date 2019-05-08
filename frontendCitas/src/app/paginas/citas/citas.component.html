@@ -1,0 +1,36 @@
+<div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1"> 
+  <div class="ae-grid__item item-lg-10 item-lg--offset-1 au-xs-ta-center">
+     <blockquote>
+      <br><br>
+       <a class="agregar" routerLink="/agregar">agregar</a>
+       <br>
+      <table role="table" id="customers" >
+       
+        <thead role="rowgroup" >
+          <tr role="row" >
+            <th role="columnheader">id</th>
+            <th role="columnheader">enfermedad paciente</th>
+            <th role="columnheader">hora de cita</th>
+            <th role="columnheader">medico</th>
+            <th role="columnheader">eliminas</th>
+            <th role="columnheader">actualizar</th>
+           
+          </tr>
+        </thead>
+        <tbody role="rowgroup" *ngFor ="let cita of arregloCitas">
+          <tr role="row">
+            <td role="cell">{{ cita.id }}</td>
+            <td role="cell">{{ cita.enfermedad }}</td>
+            <td role="cell">{{ cita.hora }}</td>
+            <td role="cell">{{ cita.menombre }}</td>
+            <td role="cell"><a class="editar" [routerLink]= "['/editar',cita.id]">editar</a></td>
+            <td role="cell"><a class="eliminar" (click)="eliminarCita(cita.id)">eliminar</a></td>
+            
+          </tr>
+        </tbody>
+
+      </table>
+      
+     </blockquote>
+  </div>
+</div>

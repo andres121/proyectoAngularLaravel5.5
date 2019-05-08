@@ -1,0 +1,23 @@
+<div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1"> 
+  <div class="ae-grid__item item-lg-10 item-lg--offset-1 au-xs-ta-center">
+     <blockquote>
+     	<div class="contenedor">
+		<form action="">
+		    <label for="fname">enfermedad</label>
+		    <input type="text" id="fname" name="enfermedad" [(ngModel)]="arrayCitas.enfermedad" placeholder="enfermedad">
+
+		    <label for="h">hora de paciente</label>
+		    <input type="text" id="h" name="hora" [(ngModel)]="arrayCitas.hora" placeholder="hora de paciente">
+
+		    <label for="medico">medico</label>
+		    <select id="medico" name="medico" [(ngModel)]="arrayCitas.medico_id" >
+		      <option *ngFor ="let medi of medicos" value="{{medi.id}}">{{ medi.menombre }}</option>
+	    </select>
+		  
+		    <button  (click)="editar ? actualizaCita() : guardarCita()"> agregar</button>
+		</form>
+		</div>
+		
+	 </blockquote>
+  </div>
+</div>
